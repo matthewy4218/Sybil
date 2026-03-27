@@ -205,7 +205,7 @@ class Sybil:
             Pretrained Sybil model
         """
         # Load checkpoint
-        checkpoint = torch.load(path, map_location="cpu")
+        checkpoint = torch.load(path, map_location="cpu", weights_only=False)
         args = checkpoint["args"]
         self._max_followup = args.max_followup
         self._censoring_dist = args.censoring_distribution
